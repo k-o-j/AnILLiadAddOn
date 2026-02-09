@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Name>SUNY Primo Search</Name>
+    <Author>Karen Okamoto</Author>
+    <Version>1.0</Version>
+    <Active>true</Active>
+    <Type>Addon</Type>
+    <Description>Searches SUNY library holdings via Ex Libris Primo.
+Automatically searches by ISBN/ISSN or title when a request is opened.
+Configurable for any SUNY campus by changing the base URL, view ID, and search scope.</Description>
+    <Forms>
+        <Form>FormRequest</Form>
+    </Forms>
+    <Settings>
+        <Setting name="AutoSearch" value="true" type="boolean">
+            <Description>Automatically search Primo when a request is opened.</Description>
+        </Setting>
+        <Setting name="PrimoBaseURL" value="https://suny-pur.primo.exlibrisgroup.com" type="string">
+            <Description>Base URL for the Primo instance. Change this for a different SUNY campus.
+Example: https://suny-pur.primo.exlibrisgroup.com</Description>
+        </Setting>
+        <Setting name="PrimoVID" value="01SUNY_PUR:01SUNY_PUR" type="string">
+            <Description>Primo View ID for your institution. Change this for a different SUNY campus.
+Example: 01SUNY_PUR:01SUNY_PUR</Description>
+        </Setting>
+        <Setting name="SearchScope" value="MyInst_and_CI" type="string">
+            <Description>Primo search scope. Controls which collections are searched.
+Common values: MyInst_and_CI, MyInstitution, Everything</Description>
+        </Setting>
+        <Setting name="DefaultSearchField" value="any" type="string">
+            <Description>Default search field for the keyword search button.
+Options: any, title, creator, isbn, issn, sub</Description>
+        </Setting>
+    </Settings>
+    <Files>
+        <File>SUNYPrimoSearch.lua</File>
+    </Files>
+</Configuration>
